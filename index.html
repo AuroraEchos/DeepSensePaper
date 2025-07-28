@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>文献记录</title>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 40px auto;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 1.1em;
+      margin: 16px 0 8px;
+      border-bottom: 1px dashed #000;
+      padding-bottom: 2px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .paper {
+      margin-bottom: 40px;
+    }
+
+    .meta, .details, p {
+      margin: 8px 0;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .tag {
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-left: 10px;
+    }
+
+    .read { color: green; }
+    .unread { color: red; }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: 1px solid #000;
+      padding: 2px 6px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>文献记录</h1>
+
+<div class="paper">
+  <h2>1. Vision-Position Multi-Modal Beam Prediction Using Real Millimeter Wave Datasets
+    <span class="tag read">[已阅读]</span>
+  </h2>
+  <div class="meta">
+    <span class="label">作者：</span>Gouranga Charan et al.　
+    <span class="label">发表：</span>IEEE WCNC, 2022
+  </div>
+  <p><span class="label">PDF：</span><a href="https://ieeexplore.ieee.org/document/9771835" target="_blank">点击查看</a></p>
+  <p><span class="label">开源代码：</span>无</p>
+
+  <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
+
+  <div class="details" style="display: none;">
+    <p><span class="label">主要贡献：</span>提出基于视觉与位置融合的多模态机器学习框架，在无需信道状态信息的前提下，实现毫米波/太赫兹波束快速预测。模型基于真实车辆数据集（DeepSense 6G）进行训练与验证，在Top-3预测准确率上接近100%，显著降低波束训练开销。</p>
+    <p><span class="label">采用方法：</span></p>
+    <p><span class="label">局限性：</span>（1）GPS位置精度受限，影响纯位置信息预测性能；（2）模型仅适用于单用户场景，未考虑多用户干扰；（3）摄像头未采集深度信息，视觉鲁棒性在恶劣天气中待验证；（4）只考虑静态图像，未建模用户运动或信道时序动态。</p>
+  </div>
+</div>
+
+  
+
+  <script>
+    function toggleDetails(button) {
+      const detailsDiv = button.nextElementSibling;
+      const isHidden = detailsDiv.style.display === "none" || detailsDiv.style.display === "";
+      detailsDiv.style.display = isHidden ? "block" : "none";
+      button.textContent = isHidden ? "隐藏详情" : "显示详情";
+    }
+  </script>
+
+</body>
+</html>
