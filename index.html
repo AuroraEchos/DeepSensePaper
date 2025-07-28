@@ -65,8 +65,9 @@
 </head>
 <body>
 
-  <h1>文献记录</h1>
+<h1>文献记录</h1>
 
+<!-- Paper 1 -->
 <div class="paper">
   <h2>1. Vision-Position Multi-Modal Beam Prediction Using Real Millimeter Wave Datasets
     <span class="tag read">[已阅读]</span>
@@ -81,25 +82,110 @@
   <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
 
   <div class="details" style="display: none;">
-    <p><span class="label">主要贡献：</span>提出基于视觉与位置融合的多模态机器学习框架，在无需信道状态信息的前提下，实现毫米波/太赫兹波束快速预测。模型基于真实车辆数据集（DeepSense 6G）进行训练与验证，在Top-3预测准确率上接近100%，显著降低波束训练开销。</p>
-    <p><span class="label">采用方法：</span>文章采取两种模态：视觉模态和位置模态，分别提取图像特征和位置信息，通过融合网络进行联合建模。视觉模态通过 ResNet-50 提取图像特征，位置模态通过 MLP 网络提取特征，最后将两者特征进行拼接 Concat。</p>
+    <p><span class="label">
+      主要贡献：</span>提出基于视觉与位置融合的多模态机器学习框架，在无需信道状态信息的前提下，实现毫米波/太赫兹波束快速预测。模型基于真实车辆数据集（DeepSense 6G）进行训练与验证，在Top-3预测准确率上接近100%，显著降低波束训练开销。
+    </p>
+    <p><span class="label">
+      采用方法：</span>文章采取两种模态：视觉模态和位置模态，分别提取图像特征和位置信息，通过融合网络进行联合建模。视觉模态通过 ResNet-50 提取图像特征，位置模态通过 MLP 网络提取特征，最后将两者特征进行拼接 Concat。
+    </p>
     <img src="./img/1_1.gif" alt="模型架构" style="max-width: 100%; height: auto;">
-    <p><span class="label">实验结果：</span>采用 Deepsense 6G 数据集中的场景5和场景6进行实验，两种场景分别为白天和黑夜，取得的结果如下：</p>
+    <p><span class="label">
+      实验结果：</span>采用 Deepsense 6G 数据集中的场景5和场景6进行实验，两种场景分别为白天和黑夜，取得的结果如下：
+    </p>
     <img src="./img/1_2.gif" alt="实验结果" style="max-width: 70%; height: auto;">
-    <p><span class="label">局限性：</span>（1）GPS位置精度受限，影响纯位置信息预测性能；（2）模型仅适用于单用户场景，未考虑多用户干扰；（3）摄像头未采集深度信息，视觉鲁棒性在恶劣天气中待验证；（4）只考虑静态图像，未建模用户运动或信道时序动态。</p>
+    <p><span class="label">
+      局限性：</span>（1）GPS位置精度受限，影响纯位置信息预测性能；（2）模型仅适用于单用户场景，未考虑多用户干扰；（3）摄像头未采集深度信息，视觉鲁棒性在恶劣天气中待验证；（4）只考虑静态图像，未建模用户运动或信道时序动态。
+    </p>
   </div>
 </div>
 
-  
+<!-- Paper 2 -->
+<div class="paper">
+  <h2>2. Blockage Prediction Using Wireless Signatures: Deep Learning Enables Real-World Demonstration
+    <span class="tag read">[已阅读]</span>
+  </h2>
+  <div class="meta">
+    <span class="label">作者：</span>Shunyao Wu et al.　
+    <span class="label">发表：</span>IEEE Open Journal of the Communications Society, 2022
+  </div>
+  <p><span class="label">PDF：</span><a href="https://ieeexplore.ieee.org/document/9743549" target="_blank">点击查看</a></p>
+  <p><span class="label">开源代码：</span>无</p>
 
-  <script>
-    function toggleDetails(button) {
-      const detailsDiv = button.nextElementSibling;
-      const isHidden = detailsDiv.style.display === "none" || detailsDiv.style.display === "";
-      detailsDiv.style.display = isHidden ? "block" : "none";
-      button.textContent = isHidden ? "隐藏详情" : "显示详情";
-    }
-  </script>
+  <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
+
+  <div class="details" style="display: none;">
+
+    <p><span class="label">主要贡献：</span></p>
+    <ul>
+      <li>毫米波通信高度依赖视距链路，容易被动态阻塞（如行人、车辆）影响可靠性与时延。</li>
+      <li>现有解决方案存在如下问题：
+        <ul>
+          <li>多连接方案资源效率低；</li>
+          <li>外部传感器（如相机/LiDAR）增加系统复杂度和成本；</li>
+          <li>信道估计类方法仅感知当前状态，缺乏前瞻性。</li>
+        </ul>
+      </li>
+      <li>本工作提出完全基于毫米波接收功率（RSS）序列的阻塞预测方法，无需额外传感器。</li>
+      <li>核心贡献包括：
+        <ul>
+          <li>提出“预阻塞签名”（Pre-blockage Wireless Signature）的概念，揭示阻塞前的功率扰动模式；</li>
+          <li>设计深度学习模型同时预测：是否阻塞、何时发生、阻塞类型、阻塞方向；</li>
+          <li>构建两个真实场景大规模数据集（共约 46 万条毫米波测量数据），覆盖室内/室外多类动态阻塞。</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><span class="label">采用方法：</span></p>
+    <ul>
+      <li>提出四个子任务，并分别建模：
+        <ul>
+          <li>是否将发生阻塞？（二分类）</li>
+          <li>阻塞将于何时发生？（回归）</li>
+          <li>阻塞的严重程度？（多分类）</li>
+          <li>阻塞物的移动方向？（多分类）</li>
+        </ul>
+      </li>
+      <li>采用两类模型结构：
+        <ul>
+          <li><strong>RNN（GRU）</strong>：建模时间序列中的功率变化特征；</li>
+          <li><strong>CNN</strong>：提取波束-时间联合特征，对方向与类型判别更具优势。</li>
+        </ul>
+      </li>
+      <li>损失函数设计：
+        <ul>
+          <li>分类任务采用交叉熵损失；</li>
+          <li>回归任务采用均方误差（MSE）。</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><span class="label">实验结果：</span></p>
+    <ul>
+      <li>阻塞发生预测准确率超过 <strong>85%</strong>（室外场景）；</li>
+      <li>可提前 <strong>600ms</strong> 成功预测，平均时间误差低于 <strong>100ms</strong>；</li>
+      <li>RNN 与 CNN 架构在不同任务中表现互补，CNN 在方向与类型判别中更优。</li>
+      <li>结合 3GPP 接入流程，预测辅助 handoff 可将切换时延从 <strong>222.8ms</strong> 降低至 <strong>11.4–80ms</strong>。</li>
+    </ul>
+
+    <p><span class="label">局限性：</span></p>
+    <ul>
+      <li>仅考虑静态发射/接收器，未处理用户运动导致的信道动态变化。</li>
+      <li>跨场景、跨天气条件下的泛化能力未充分评估。</li>
+      <li>对恶劣信道（雨衰、非视距等）和硬件非理想因素的鲁棒性缺乏系统性分析。</li>
+    </ul>
+
+  </div>
+</div>
+
+
+<script>
+  function toggleDetails(button) {
+    const detailsDiv = button.nextElementSibling;
+    const isHidden = detailsDiv.style.display === "none" || detailsDiv.style.display === "";
+    detailsDiv.style.display = isHidden ? "block" : "none";
+    button.textContent = isHidden ? "隐藏详情" : "显示详情";
+  }
+</script>
 
 </body>
 </html>
