@@ -240,6 +240,69 @@
     </div>
  </div>
 
+<!-- Paper 4 -->
+<div class="paper">
+  <h2>4. Radar Aided Proactive Blockage Prediction in Real-World Millimeter Wave Systems 
+    <span class="tag read">[已阅读]</span>
+  </h2>
+  <div class="meta">
+    <span class="label">作者：</span>Umut Demirhan, Ahmed Alkhateeb
+    <span class="label">发表：</span>IEEE ICC, 2022
+  </div>
+  <p><span class="label">PDF：</span><a href="https://ieeexplore.ieee.org/document/9838438" target="_blank">点击查看</a></p>
+  <p><span class="label">开源代码：</span><a href="https://github.com/umut-demirhan/Radar-aided-blockage-prediction" target="_blank">GitHub</a>(数据集无法下载)</p>
+
+  <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
+  <div class="details" style="display: none;">
+    <p><span class="label">主要贡献：</span></p>
+    <ul>
+      <li>首次提出利用毫米波FMCW雷达实现<strong>未来链路阻塞</strong>的前瞻性预测，提升高频通信的可靠性。</li>
+      <li>构建基于 DeepSense 6G 平台的大规模实测数据集，包含超过 <strong>1 万条</strong>雷达与通信联合测量样本。</li>
+      <li>设计结合 CNN 与 LSTM 的深度神经网络，实现时序雷达图像输入的二分类阻塞预测，提前最多 1 秒预警。</li>
+      <li>预测精度达到 <strong>90%+ 的准确率和 F1 分数</strong>，模型总参数仅约 18 万，部署代价低。</li>
+    </ul>
+
+    <p><span class="label">采用方法：</span></p>
+    <ul>
+      <li>系统模型：
+        <ul>
+          <li>基站配备 60GHz 相控阵和 77GHz FMCW 雷达，用户端为静态全向发射；</li>
+          <li>采用 block fading 模型建模阻塞事件，雷达每帧周期为 110ms；</li>
+        </ul>
+      </li>
+      <li>数据预处理：
+        <ul>
+          <li>对雷达 ADC 数据进行 Range、Doppler、Angle FFT，生成 <strong>Radar Cube</strong>；</li>
+          <li>求和压缩为二维 <strong>Range-Angle Map</strong>，用于输入深度模型。</li>
+        </ul>
+      </li>
+      <li>模型结构：
+        <ul>
+          <li>CNN 特征提取（5层卷积+池化）+ LSTM 建模时序特征 + FC 预测层；</li>
+          <li>使用 Sigmoid 输出概率并转为二分类结果。</li>
+        </ul>
+      </li>
+      <img src="./img/4_1.gif" alt="模型架构" style="max-width: 70%; height: auto;">
+      <img src="./img/4_2.gif" alt="性能曲线" style="max-width: 70%; height: auto;">
+    </ul>
+
+    <p><span class="label">实验结果：</span></p>
+    <ul>
+      <li>预测提前 <strong>1 秒</strong>（Tp=10）仍达 <strong>92~97%</strong> 准确率，F1 分数 > 90%；</li>
+      <li>使用 DeepSense Scenario 30 采集，包含 307 条独立阻塞序列，共 <strong>14624</strong> 个样本点；</li>
+      <li>最终训练样本为 6965 条，验证 1808 条，测试 907 条，模型参数仅 <strong>184K</strong>。</li>
+      <img src="./img/4_3.gif" alt="性能曲线" style="max-width: 70%; height: auto;">
+      <img src="./img/4_4.gif" alt="混淆矩阵" style="max-width: 70%; height: auto;">
+    </ul>
+
+    <p><span class="label">局限性：</span></p>
+    <ul>
+      <li>未扩展到动态用户、多用户、多基站场景；</li>
+      <li>未考虑复杂天气或弱反射目标下的鲁棒性问题；</li>
+      <li>目前输入为 Range-Angle Map，未来可探索 Radar Cube 3D建模。</li>
+    </ul>
+  </div>
+</div>
 
 <script>
   function toggleDetails(button) {
