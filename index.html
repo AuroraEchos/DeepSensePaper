@@ -304,6 +304,67 @@
   </div>
 </div>
 
+<!-- Paper 5 -->
+<div class="paper">
+  <h2>5. LiDAR-Aided Mobile Blockage Prediction in Real-World Millimeter Wave Systems
+    <span class="tag read">[已阅读]</span>
+  </h2>
+  <div class="meta">
+    <span class="label">作者：</span>Shunyao Wu, Chaitali Chakrabarti, Ahmed Alkhateeb
+    <span class="label">发表：</span>IEEE WCNC, 2022
+  </div>
+  <p><span class="label">PDF：</span><a href="https://ieeexplore.ieee.org/document/9771651" target="_blank">点击查看</a></p>
+  <p><span class="label">开源代码：</span>无</p>
+
+  <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
+  <div class="details" style="display: none;">
+    <p><span class="label">主要贡献：</span></p>
+    <ul>
+      <li>首次提出基于 LiDAR 的链路阻塞预测方法，在真实城市街景中进行毫米波系统实测验证。</li>
+      <li>构建超过 <strong>30 万条</strong>多模态实测样本的大规模数据集（DeepSense Scenarios 24–27），包含 LiDAR、RGB 图像与 mmWave 通信数据。</li>
+      <li>设计静态聚类去噪算法（SCR）以提升低成本 LiDAR 数据质量，并显著增强预测性能。</li>
+      <li>所提出 CNN 模型在预测提前 1 秒时仍保持 <strong>80%+</strong> 准确率，0.1 秒预测时达到 <strong>95%</strong>。</li>
+    </ul>
+
+    <p><span class="label">采用方法：</span></p>
+    <ul>
+      <li>系统模型：
+        <ul>
+          <li>固定基站配备 16 阵列天线与同步 LiDAR，面向静态用户方向扫描环境；</li>
+          <li>采用预定义波束码本（64 个波束）与 360 度 LiDAR 点云序列。</li>
+        </ul>
+      </li>
+      <li>数据预处理：
+        <ul>
+          <li>提出 <strong>SCR 算法</strong>：基于视场过滤 + 字典匹配，剔除静态点与路径反射点；</li>
+          <li>对原始 460 点缩减为 216 个角度量化点，并进行距离量化。</li>
+        </ul>
+      </li>
+      <li>模型结构：
+        <ul>
+          <li>设计 2 层 CNN 卷积堆栈 + MaxPooling + FC 分类器的轻量网络；</li>
+          <li>输入为 <code>16×216×2</code> LiDAR 序列张量，预测未来 TP 时刻内是否阻塞。</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><span class="label">实验结果：</span></p>
+    <ul>
+      <li>在预测提前 <strong>0.1 秒</strong>时，准确率最高达 <strong>95%</strong>，提前 1 秒仍保持 <strong>80%+</strong> 准确率；</li>
+      <li>相比 mmWave 信号预测（低于 0.6 秒后快速下降），LiDAR 预测在长时间预测上更具优势；</li>
+      <li>平均参数量仅 <strong>6883</strong>，低算力设备上亦可运行；</li>
+      <li>在 3GPP 场景下，阻塞预测可将平均切换延迟从 <strong>222.8ms</strong> 降低至 <strong>35.43ms</strong>（SCR + 1s）。</li>
+    </ul>
+
+    <p><span class="label">局限性：</span></p>
+    <ul>
+      <li>LiDAR 模型受限于视场角和点密度，尚未探索点云 3D 特征或与图像融合的增强建模方式；</li>
+      <li>当前测试场景为静态基站和静态用户，对动态用户预测能力需进一步拓展；</li>
+      <li>尚未开源代码或公开 LiDAR 清洗后的数据子集，复现难度较高。</li>
+    </ul>
+  </div>
+</div>
+
 <script>
   function toggleDetails(button) {
     const detailsDiv = button.nextElementSibling;
