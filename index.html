@@ -177,6 +177,69 @@
   </div>
 </div>
 
+<!-- Paper 3 --> 
+ <div class="paper"> 
+  <h2>3. Radar Aided 6G Beam Prediction: Deep Learning Algorithms and Real-World Demonstration 
+    <span class="tag read">[已阅读]</span> 
+  </h2> 
+  <div class="meta"> 
+    <span class="label">作者：</span>Umut Demirhan, Ahmed Alkhateeb <span class="label">发表：</span>IEEE WCNC, 2022 
+  </div> 
+  <p><span class="label">PDF：</span><a href="https://ieeexplore.ieee.org/document/9771564" target="_blank">点击查看</a></p> 
+  <p><span class="label">开源代码：</span><a href="https://github.com/umut-demirhan/Radar-aided-beam-prediction" target="_blank">GitHub</a>(数据集无法下载)</p>
+  
+  <button class="toggle-btn" onclick="toggleDetails(this)">显示详情</button>
+  <div class="details" style="display: none;">
+  
+    <p><span class="label">主要贡献：</span></p>
+    <ul>
+      <li>提出首个基于深度学习的毫米波雷达辅助波束预测算法，并在真实车联网场景中完成实证验证。</li>
+      <li>设计多种雷达预处理方法（Range-Angle、Range-Velocity、Radar Cube），结合CNN模型实现从雷达数据到波束的映射。</li>
+      <li>构建毫米波通信与雷达融合的大规模真实数据集，利用 DeepSense 6G 平台进行收集，包含超 6 千条数据样本。</li>
+      <li>在不依赖雷达与通信模块校准的条件下，实现 Top-5 波束预测准确率接近 90%，并将波束训练开销减少约 93%。</li>
+    </ul>
+
+    <p><span class="label">采用方法：</span></p>
+    <ul>
+      <li>系统模型：
+        <ul>
+          <li>基站配备 77GHz FMCW 雷达与 60GHz 通信相控阵；用户端采用准全向天线发射。</li>
+        </ul>
+      </li>
+      <li>数据预处理：
+        <ul>
+          <li><strong>Range-Angle Map</strong>：时域FFT + 空域FFT；</li>
+          <li><strong>Range-Velocity Map</strong>：时域FFT + 脉冲FFT（Doppler）；</li>
+          <li><strong>Radar Cube</strong>：三维FFT，保留完整时-频-空特征。</li>
+        </ul>
+      </li>
+      <li>模型结构：
+        <ul>
+          <li>设计轻量CNN网络：5个卷积层 + 平均池化 + 3层全连接，适配不同输入维度（详见 Table II）；</li>
+          <li>损失函数为交叉熵，多分类 Top-K 预测问题。</li>
+        </ul>
+      </li>
+      <img src="./img/3_1.gif" alt="模型架构" style="max-width: 70%; height: auto;">
+      <img src="./img/3_2.gif" alt="模型维度" style="max-width: 70%; height: auto;">
+    </ul>
+
+    <p><span class="label">实验结果：</span></p>
+    <ul>
+      <li>Range-Angle 模态下 Top-5 波束预测准确率达 <strong>93.5%</strong>，显著优于传统查找表法（<33%）；</li>
+      <li>模型大小约为 <strong>175K</strong> 参数，推理时延低于 <strong>0.5ms</strong>，预处理耗时受 FFT 分辨率影响显著；</li>
+      <li>仅使用 <strong>10%-20%</strong> 训练数据即可达到较好效果，Range-Angle Map 对数据需求更低，泛化更强。</li>
+      <img src="./img/3_3.gif" alt="实验结果" style="max-width: 70%; height: auto;">
+    </ul>
+
+    <p><span class="label">局限性：</span></p>
+    <ul>
+      <li>数据集中仅使用单用户场景，未评估多用户、多目标干扰下的鲁棒性；</li>
+      <li>模型结构偏轻量，Radar Cube 模态性能受限，未来可探索更深层网络或 Transformer；</li>
+      <li>未引入运动轨迹连续性建模，忽略帧间时序相关性。</li>
+    </ul>
+    </div>
+ </div>
+
 
 <script>
   function toggleDetails(button) {
