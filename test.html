@@ -186,14 +186,18 @@
   papers.forEach((p, idx) => {
     const tr = document.createElement("tr");
     
+    // 创建代码链接单元格内容
     let codeCellContent;
     if (p.codeLink) {
         if (p.isCodeTested) {
+            // 代码已跑通
             codeCellContent = `<a href="${p.codeLink}" target="_blank">代码 ✅</a>`;
         } else {
+            // 代码未跑通
             codeCellContent = `<a href="${p.codeLink}" target="_blank">代码 ⚠️</a>`;
         }
     } else {
+      // 没有代码
       codeCellContent = "无";
     }
 
