@@ -219,6 +219,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -609,9 +690,159 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style><title>2025-04-27</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h4 id='主要贡献'><span>主要贡献：</span></h4><ul><li><p><span>首次在真实大规模数据集中验证 LiDAR 数据用于 </span><strong><span>当前与未来</span></strong><span> 波束预测的有效性。</span></p></li><li><p><span>提出基于 GRU 的编码器-解码器网络，能够根据历史 LiDAR 感知信息预测未来多个时刻的最佳波束。</span></p></li><li><p><span>在 DeepSense 6G 场景 8 上进行实测评估，提出方法在 top-5 准确率上达到 </span><strong><span>95.6%</span></strong><span>（当前波束），未来波束预测保持 &gt;94% 接收功率比。</span></p></li><li><p><span>相比基线方法大幅降低了波束训练开销，可实现 </span><strong><span>90%+</span></strong><span> 的开销节省。</span></p></li></ul><h4 id='采用方法'><span>采用方法：</span></h4><ul><li><p><span>系统模型：</span></p><ul><li><p><span>静止基站（BS）安装 16 阵列天线与 360° LiDAR；</span></p></li><li><p><span>移动用户设备（UE）为 60 GHz 全向发射器，基站使用 64 波束码本进行通信。</span></p></li></ul></li><li><p><span>数据预处理：</span></p><ul><li><p><span>每个采样周期收集一帧原始 LiDAR 点云（460 点）并量化为 </span><strong><span>216 角度 bin</span></strong><span>；</span></p></li><li><p><span>信道采样间隔为 </span><strong><span>128ms</span></strong><span>，数据包括 LiDAR 和 64 波束接收功率向量。</span></p></li></ul></li><li><p><span>模型结构：</span></p><ul><li><p><span>采用 GRU 编码器-解码器网络，支持 </span><strong><span>当前波束预测</span></strong><span> 与 </span><strong><span>未来 v 步预测</span></strong><span>；</span></p></li><li><p><span>输入：长度为 </span><code>W=8</code><span> 的 LiDAR 序列，输出：</span><code>V+1=4</code><span> 个当前及未来波束；</span></p></li><li><p><span>每一帧 LiDAR 经 FC 层降维至 64-d 向量后输入 GRU，输出经 softmax 分类器预测 beam。</span></p></li></ul></li></ul><h4 id='实验结果'><span>实验结果：</span></h4><ul><li><p><strong><span>当前波束预测</span></strong><span>：top-5 准确率为 </span><strong><span>95.6%</span></strong><span>；</span></p></li><li><p><strong><span>未来第一帧预测</span></strong><span>：top-5 准确率为 </span><strong><span>95.0%</span></strong><span>，top-1 相对功率保持 &gt;94%；</span></p></li><li><p><strong><span>与基线比较</span></strong><span>：仅需使用 10.4% 的 beam training 开销即可达到相似精度；</span></p></li><li><p><span>模型推理速度为 </span><strong><span>1.38ms（CPU）</span></strong><span>，具备实际部署可行性。</span></p></li></ul><h4 id='局限性'><span>局限性：</span></h4><ul><li><p><span>当前研究聚焦单用户场景，尚未扩展至多用户系统；</span></p></li><li><p><span>LiDAR 在极端天气（雨、雾）下性能下降，需考虑多模态增强；</span></p></li><li><p><span>模型依赖精确同步的 LiDAR 与通信数据，实际部署需进一步验证。</span></p></li></ul></div></div>
+<div id='write'  class=''><h4 id='主要贡献'><span>主要贡献：</span></h4><ul><li><p><span>首次在真实大规模数据集中验证 LiDAR 数据用于 </span><strong><span>当前与未来</span></strong><span> 波束预测的有效性。</span></p></li><li><p><span>提出基于 GRU 的编码器-解码器网络，能够根据历史 LiDAR 感知信息预测未来多个时刻的最佳波束。</span></p></li><li><p><span>在 DeepSense 6G 场景 8 上进行实测评估，提出方法在 top-5 准确率上达到 </span><strong><span>95.6%</span></strong><span>（当前波束），未来波束预测保持 &gt;94% 接收功率比。</span></p></li><li><p><span>相比基线方法大幅降低了波束训练开销，可实现 </span><strong><span>90%+</span></strong><span> 的开销节省。</span></p></li></ul><h4 id='采用方法'><span>采用方法：</span></h4><ul><li><p><span>系统模型：</span></p><ul><li><p><span>静止基站（BS）安装 16 阵列天线与 360° LiDAR；</span></p></li><li><p><span>移动用户设备（UE）为 60 GHz 全向发射器，基站使用 64 波束码本进行通信。</span></p></li></ul></li><li><p><span>数据预处理：</span></p><ul><li><p><span>每个采样周期收集一帧原始 LiDAR 点云（460 点）并量化为 </span><strong><span>216 角度 bin</span></strong><span>；</span></p></li><li><p><span>信道采样间隔为 </span><strong><span>128ms</span></strong><span>，数据包括 LiDAR 和 64 波束接收功率向量。</span></p></li></ul></li><li><p><span>模型结构：</span></p><ul><li><p><span>采用 GRU 编码器-解码器网络，支持 </span><strong><span>当前波束预测</span></strong><span> 与 </span><strong><span>未来 v 步预测</span></strong><span>；</span></p></li><li><p><span>输入：长度为 </span><code>W=8</code><span> 的 LiDAR 序列，输出：</span><code>V+1=4</code><span> 个当前及未来波束；</span></p></li><li><p><span>每一帧 LiDAR 经 FC 层降维至 64-d 向量后输入 GRU，输出经 softmax 分类器预测 beam。</span></p></li></ul></li></ul><h4 id='实验结果'><span>实验结果：</span></h4><ul><li><p><strong><span>当前波束预测</span></strong><span>：top-5 准确率为 </span><strong><span>95.6%</span></strong><span>；</span></p></li><li><p><strong><span>未来第一帧预测</span></strong><span>：top-5 准确率为 </span><strong><span>95.0%</span></strong><span>，top-1 相对功率保持 &gt;94%；</span></p></li><li><p><strong><span>与基线比较</span></strong><span>：仅需使用 10.4% 的 beam training 开销即可达到相似精度；</span></p></li><li><p><span>模型推理速度为 </span><strong><span>1.38ms（CPU）</span></strong><span>，具备实际部署可行性。</span></p><p><img src="./img/6_1.gif"  /></p></li></ul><h4 id='局限性'><span>局限性：</span></h4><ul><li><p><span>当前研究聚焦单用户场景，尚未扩展至多用户系统；</span></p></li><li><p><span>LiDAR 在极端天气（雨、雾）下性能下降，需考虑多模态增强；</span></p></li><li><p><span>模型依赖精确同步的 LiDAR 与通信数据，实际部署需进一步验证。</span></p></li></ul><h4 id='代码复现记录报告'><span>代码复现记录报告</span></h4><p><span>本项目的核心任务是基于输入的历史雷达数据（时间序列），预测未来几步的光束数据。具体地，作者使用 GRU 网络来处理雷达数据的时间依赖关系，并对未来的光束进行多类别分类预测。</span></p><p><strong><span>数据集：</span></strong></p><p><span>本任务使用的数据集来自deepsense 6g数据集中的场景8,通过此处</span><a href='https://www.deepsense6g.net/scenario-8/'><span>下载</span></a><span>。该数据集来自雷达传感器，包含了时间序列的激光雷达数据和对应的光束数据。数据集包括以下几种主要信息：</span></p><ul><li><p><strong><span>unit1_pwr_60ghz：</span></strong><span> 60GHz雷达单元的功率数据。</span></p></li></ul><ul><li><p><strong><span>unit1_lidar_SCR：</span></strong><span> 激光雷达的 SCR 数据。</span></p></li></ul><ul><li><p><strong><span>seq_index：</span></strong><span> 数据序列的索引，表示数据的时间步。</span></p></li></ul><ul><li><p><strong><span>Beam 数据：</span></strong><span> 对应时间步的光束数据，通常是从雷达信号中提取的不同类别的信息。</span></p></li></ul><p><strong><span>数据处理：</span></strong></p><p><span>数据预处理代码存放在</span><code>gen_data_seq.py</code><span>文件中，运行该代码会对数据集进行划分，train与test比例为8：2。</span></p><ol><li><p><strong><span>数据切分：</span></strong><span> 将数据按照时间序列切分为固定长度的输入序列（</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.741ex" height="1.717ex" role="img" focusable="false" viewBox="0 -677 2537.6 759" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-3-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-3-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-3-TEX-N-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-3-TEX-I-1D447"></use></g><g data-mml-node="mo" transform="translate(981.8,0)"><use data-c="3D" xlink:href="#MJX-3-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(2037.6,0)"><use data-c="38" xlink:href="#MJX-3-TEX-N-38"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>=</mo><mn>8</mn></math></mjx-assistive-mml></mjx-container><script type="math/tex">T=8</script><span>）和输出序列（</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="6.16ex" height="1.731ex" role="img" focusable="false" viewBox="0 -683 2722.6 765" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-6-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-6-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-6-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D43E" xlink:href="#MJX-6-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(1166.8,0)"><use data-c="3D" xlink:href="#MJX-6-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(2222.6,0)"><use data-c="33" xlink:href="#MJX-6-TEX-N-33"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>K</mi><mo>=</mo><mn>3</mn></math></mjx-assistive-mml></mjx-container><script type="math/tex">K=3</script><span>）。</span></p></li><li><p><strong><span>特征选择：</span></strong><span> 选择有意义的特征（如雷达功率数据和激光雷达数据）作为输入。</span></p></li><li><p><strong><span>标签处理：</span></strong><span> 使用最大功率索引作为光束的标签，进行多类别分类。</span></p></li></ol><p><strong><span>模型架构：</span></strong></p><p><span>模型定义在</span><code>model.py</code><span>文件中，采用了一层GRU进行时序预测：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.07031px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">GruModel</span>(<span class="cm-variable">nn</span>.<span class="cm-property">Module</span>):</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">__init__</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">num_classes</span>, <span class="cm-variable">num_layers</span><span class="cm-operator">=</span><span class="cm-number">1</span>, <span class="cm-variable">hidden_size</span><span class="cm-operator">=</span><span class="cm-number">64</span>, <span class="cm-variable">embed_size</span><span class="cm-operator">=</span><span class="cm-number">64</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-builtin">super</span>(<span class="cm-variable">GruModel</span>, <span class="cm-variable-2">self</span>).<span class="cm-property">__init__</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">embed</span> <span class="cm-operator">=</span> <span class="cm-variable">torch</span>.<span class="cm-property">nn</span>.<span class="cm-property">Linear</span>(<span class="cm-number">216</span>, <span class="cm-variable">embed_size</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">num_layers</span> <span class="cm-operator">=</span> <span class="cm-variable">num_layers</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">hidden_size</span> <span class="cm-operator">=</span> <span class="cm-variable">hidden_size</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">gru</span> <span class="cm-operator">=</span> <span class="cm-variable">torch</span>.<span class="cm-property">nn</span>.<span class="cm-property">GRU</span>(<span class="cm-variable">input_size</span><span class="cm-operator">=</span><span class="cm-variable">embed_size</span>, <span class="cm-variable">hidden_size</span><span class="cm-operator">=</span><span class="cm-variable">hidden_size</span>, <span class="cm-variable">num_layers</span><span class="cm-operator">=</span><span class="cm-variable">num_layers</span>, <span class="cm-variable">dropout</span><span class="cm-operator">=</span><span class="cm-number">0.8</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">fc</span> <span class="cm-operator">=</span> <span class="cm-variable">torch</span>.<span class="cm-property">nn</span>.<span class="cm-property">Linear</span>(<span class="cm-variable">hidden_size</span>, <span class="cm-variable">num_classes</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">name</span> <span class="cm-operator">=</span> <span class="cm-string">'GruModel'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">dropout1</span> <span class="cm-operator">=</span> <span class="cm-variable">nn</span>.<span class="cm-property">Dropout</span>(<span class="cm-number">0.5</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">initHidden</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">batch_size</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">torch</span>.<span class="cm-property">zeros</span>((<span class="cm-variable-2">self</span>.<span class="cm-property">num_layers</span>, <span class="cm-variable">batch_size</span>, <span class="cm-variable-2">self</span>.<span class="cm-property">hidden_size</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">forward</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">x</span>, <span class="cm-variable">h</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">self</span>.<span class="cm-property">embed</span>(<span class="cm-variable">x</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">self</span>.<span class="cm-property">dropout1</span>(<span class="cm-variable">y</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">y</span>, <span class="cm-variable">h</span> <span class="cm-operator">=</span> <span class="cm-variable-2">self</span>.<span class="cm-property">gru</span>(<span class="cm-variable">y</span>, <span class="cm-variable">h</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">self</span>.<span class="cm-property">fc</span>(<span class="cm-variable">y</span>)</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">y</span>, <span class="cm-variable">h</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 423px;"></div><div class="CodeMirror-gutters" style="display: none; height: 423px;"></div></div></div></pre><p><strong><span>训练过程：</span></strong></p><p><span>模型的训练与评估代码均存放在</span><code>train_model.py</code><span>文件中，只需要运行便可得到结果，评价指标选取Top-K。</span></p><p><strong><span>结果分析：</span></strong></p><figure class='table-figure'><table><thead><tr><th><strong><span>Top-k Accuracy</span></strong></th><th><strong><span>Epoch 1</span></strong></th><th><strong><span>Epoch 2</span></strong></th><th><strong><span>Epoch 3</span></strong></th><th><strong><span>Epoch 4</span></strong></th></tr></thead><tbody><tr><td><strong><span>Top-1 Accuracy</span></strong></td><td><span>58.06%</span></td><td><span>55.86%</span></td><td><span>52.75%</span></td><td><span>46.15%</span></td></tr><tr><td><strong><span>Top-2 Accuracy</span></strong></td><td><span>78.02%</span></td><td><span>76.19%</span></td><td><span>72.53%</span></td><td><span>69.41%</span></td></tr><tr><td><strong><span>Top-3 Accuracy</span></strong></td><td><span>87.73%</span></td><td><span>85.90%</span></td><td><span>82.60%</span></td><td><span>79.30%</span></td></tr><tr><td><strong><span>Top-5 Accuracy</span></strong></td><td><span>94.69%</span></td><td><span>94.14%</span></td><td><span>92.86%</span></td><td><span>91.58%</span></td></tr></tbody></table></figure></div></div>
 </body>
 </html>
